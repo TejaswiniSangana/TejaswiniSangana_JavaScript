@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+<script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var password=document.myform.password.value;  
+var x=document.myform.email.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (name==null || name==""){  
+  alert("Enter your name");  
+  return false;  
+}else if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  
+  else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address ");  
+  return false;  
+  }  
+  var phn=document.myform.Phone.value;
+if(isNaN(phn)){
+	alert("Phone number field should be a number");
+	return false; } 
+if (phn.length!=10){
+	alert("length of Phone Number must be 10 digits");
+	return false;
+}
+var dt=document.myform.dob.value;
+if (dt==null){
+	alert("Please enter valid Date of Birth");
+	return false;
+}
+
+}
+</script>  
+</head>
+<body>
+<div class="form-style-3">
+<form name="myform" method="post" action="validation.html" onsubmit="return validateform()" > 
+
+<label for="name"><span>Name <span class="required">*</span></span><input type="text" class="input-field" name="name" value="" /></label>
+<br/>
+<label for="Phone"><span>Phone Number<span class="required">*</span></span><input type="text" class="input-field" name="Phone" value="" /></label>
+<br/>
+<label for="email"><span>Email Address<span class="required">*</span></span><input type="email" class="input-field" name="email" value="" /></label>
+<br/>
+<label for="password"><span>Password<span class="required">*</span></span><input type="password" name="password"/></label> 
+</br>
+<label for="dob"><span>Date of Birth<span class="required">*</span></span><input type="Date" name="dob"/></label>
+<br/>
+
+<input type="submit" value="Register">  
+</form>  
+</div>
+
+<style type="text/css">
+.form-style-3{
+  max-width: 450px;
+  font-family: "Times New Roman", Times, serif;
+}
+.form-style-3 label{
+  display:block;
+  margin-bottom: 10px;
+}
+.form-style-3 label > span{
+  float: left;
+  width: 100px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.form-style-3 textarea{
+  width:250px;
+  height:100px;
+}
+.form-style-3 input[type=text],
+.form-style-3 input[type=date],
+.form-style-3 input[type=datetime],
+.form-style-3 input[type=number],
+.form-style-3 input[type=search],
+.form-style-3 input[type=time],
+.form-style-3 input[type=url],
+.form-style-3 input[type=email],
+.form-style-3 input[type=password],
+.form-style-3 select, 
+.form-style-3 textarea{
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border: 1px solid #DCEEEE;
+  outline: none;
+  color: #000000;
+  padding: 5px 8px 5px 8px;
+  box-shadow: inset 1px 1px 4px #ECF0F1;
+  -moz-box-shadow: inset 1px 1px 4px #ECF0F1;
+  -webkit-box-shadow: inset 1px 1px 4px #ECF0F1;
+  background: #ECF0F1;
+  width:50%;
+}
+.form-style-3  input[type=submit],
+.form-style-3  input[type=button]{
+  background: #2743C9;
+  border: 1px solid #2743C9;
+  padding: 5px 15px 5px 15px;
+  color: #FBFCFC;
+  box-shadow: inset -1px -1px 3px #2743C9;
+  -moz-box-shadow: inset -1px -1px 3px #2743C9;
+  -webkit-box-shadow: inset -1px -1px 3px #2743C9;
+  border-radius: 3px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;  
+  font-weight: bold;
+}
+.required{
+  color:red;
+  font-weight:normal;
+}
+</style>
+
+</body>
+</html>
